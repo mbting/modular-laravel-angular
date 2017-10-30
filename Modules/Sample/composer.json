@@ -1,0 +1,15 @@
+{
+    "name": "sample",
+    "description": "sample module",
+    "authors": [
+        {
+            "name": "Ibrahim Naeem",
+            "email": "naeem@bml.com.mv"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Sample\\": ""
+        }
+    }
+}
