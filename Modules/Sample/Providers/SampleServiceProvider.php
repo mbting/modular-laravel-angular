@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Otp\Providers;
+namespace Modules\Sample\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
