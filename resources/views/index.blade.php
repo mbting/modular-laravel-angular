@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Phoenix</title>
+  <base href="/">
+  <meta charset="UTF-8">
+  <title>Phoenix</title>
 </head>
 <body>
   <app-root>loading</app-root>
