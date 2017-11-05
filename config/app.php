@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Nwidart\Modules\LaravelModulesServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
     ],
 
@@ -229,6 +230,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Module' => Nwidart\Modules\Facades\Module::class,
+        'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+        'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory'
 
     ],
 
