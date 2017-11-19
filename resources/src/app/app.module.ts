@@ -18,6 +18,7 @@ import {StorageService} from './services/storage.service';
 import {HttpService} from './services/http.service';
 import {AuthService} from './services/auth.service';
 import {AuthInterceptor} from './interceptors/auth.interceptor';
+import {AuthCheck} from "./services/authcheck.service";
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import {AuthInterceptor} from './interceptors/auth.interceptor';
     StorageService,
     HttpService,
     AuthService,
+    AuthCheck,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
