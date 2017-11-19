@@ -1,13 +1,13 @@
 <div class="login-wrapper">
-  <form class="login">
+  <form class="login" (submit)="login()">
     <label class="title">
       <h3 class="welcome">Welcome to</h3>
       Laravel Angular
       <h5 class="hint">Use your credentials to sign in</h5>
     </label>
     <div class="login-group">
-      <input class="username" type="text" id="login_username" placeholder="Username">
-      <input class="password" type="password" id="login_password" placeholder="Password">
+      <input class="username" type="text" [(ngModel)]="authRequest.username" name="username" placeholder="Username">
+      <input class="password" type="password" [(ngModel)]="authRequest.password" name="password" placeholder="Password">
       <div class="error active" *ngIf="error">
         {{ error }}
       </div>
