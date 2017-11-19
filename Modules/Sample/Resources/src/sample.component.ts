@@ -19,7 +19,7 @@ export class SampleComponent implements OnInit {
     this.service.get().then(n => {
       this.data = n;
       this.error = null;
-    }).catch( e => this.error = 'An error occurred')
+    }).catch( e => this.error = 'An error occurred');
   }
 
 }
