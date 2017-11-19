@@ -17,7 +17,7 @@ export class SampleComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.get().then(n => {
-      this.data = n;
+      this.data = n.payload;
       this.error = null;
     }).catch( e => this.error = 'An error occurred');
   }

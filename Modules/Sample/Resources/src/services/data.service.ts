@@ -1,17 +1,12 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import 'rxjs/add/operator/map';
+import {HttpService} from '../../../../../resources/src/app/services/http.service';
 
 @Injectable()
 export class SampleDataService {
 
-  constructor(private http: Http) {}
+  constructor(private http: HttpService) {}
 
-  private url = 'http://localhost:8000/api/sample';
-
-  get(): Promise<number[]> {
-    return this.http.get(this.url)
-      .toPromise()
-      .then(response => response.json());
+  get() {
+    return this.http.get('sample');
   }
 }
