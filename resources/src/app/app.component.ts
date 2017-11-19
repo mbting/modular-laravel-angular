@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from './services/auth.service';
+import {AlertService} from './services/alert.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,11 @@ import {AuthService} from './services/auth.service';
 export class AppComponent implements OnInit {
 
   sidebar = false;
+  alert = null;
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, alertService: AlertService) {
     this.auth.authenticatedEvent.subscribe( e => this.sidebar = e );
+    alertService.alertEvent.subscribe( e => this.alert = e );
   }
 
   ngOnInit() {

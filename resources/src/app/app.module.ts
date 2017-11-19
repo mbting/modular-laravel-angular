@@ -19,6 +19,7 @@ import {HttpService} from './services/http.service';
 import {AuthService} from './services/auth.service';
 import {AuthInterceptor} from './interceptors/auth.interceptor';
 import {AuthCheck} from './services/authcheck.service';
+import {AlertService} from './services/alert.service';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import {AuthCheck} from './services/authcheck.service';
     HttpService,
     AuthService,
     AuthCheck,
+    AlertService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

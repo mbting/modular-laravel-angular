@@ -1,4 +1,13 @@
 <clr-main-container class="main-container">
+
+  <clr-alert [clrAlertType]="alert.level" [clrAlertAppLevel]="true" *ngIf="alert">
+    <clr-alert-item>
+        <span class="alert-text">
+            {{ alert.text }}
+        </span>
+    </clr-alert-item>
+  </clr-alert>
+
   <app-header></app-header>
   <div class="content-container">
     <div class="content-area">

@@ -2,13 +2,15 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ApiResponse} from '../models/apiresponse.model';
 import {ConfigService} from './config.service';
+import {AlertService} from './alert.service';
+import {StorageService} from './storage.service';
 
 @Injectable()
 export class HttpService {
 
   base = null;
 
-  constructor(private http: HttpClient, config: ConfigService) {
+  constructor(private http: HttpClient, config: ConfigService, private alert: AlertService, private storage: StorageService) {
     this.base = config.baseURL;
   }
 
@@ -21,7 +23,7 @@ export class HttpService {
   }
 
   private onError(e) {
-    console.log(e.message);
+    this.alert.danger(e.message);
   }
 
 }
