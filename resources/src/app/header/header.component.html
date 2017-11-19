@@ -1,15 +1,20 @@
-<header class="header-6">
+<clr-header class="header-2">
   <div class="branding">
     <a href="#" class="nav-link">
-      <clr-icon shape="flame"></clr-icon>
+      <clr-icon shape="flame" class="is-inverse"></clr-icon>
       <span class="title">Laravel Angular</span>
     </a>
   </div>
-  <div class="header-nav">
-  </div>
   <div class="header-actions">
-    <a href="#" class="nav-link nav-icon">
-      <clr-icon shape="cog"></clr-icon>
-    </a>
+    <clr-dropdown>
+      <button class="nav-icon" clrDropdownTrigger>
+        <clr-icon shape="user"></clr-icon>
+        <clr-icon shape="caret down"></clr-icon>
+      </button>
+      <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+        <h4 class="dropdown-header">User Name</h4>
+        <a href="#" clrDropdownItem>Log out</a>
+      </clr-dropdown-menu>
+    </clr-dropdown>
   </div>
-</header>
+</clr-header>

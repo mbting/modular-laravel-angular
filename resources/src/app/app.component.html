@@ -1,9 +1,9 @@
-<div class="main-container">
+<clr-main-container class="main-container">
   <app-header></app-header>
   <div class="content-container">
     <div class="content-area">
       <router-outlet></router-outlet>
     </div>
-    <app-sidebar class="sidenav"></app-sidebar>
+    <app-sidebar class="sidenav" [clr-nav-level]="1"></app-sidebar>
   </div>
-</div>
+</clr-main-container>

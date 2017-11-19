@@ -1,0 +1,5 @@
+.login-wrapper { background: none; border: none; }
+.login-wrapper .login { background: none; min-height: 2rem; text-align: center; margin: 0 auto; }
+.login-wrapper .login::after { display: none; }
+.login-wrapper .login .login-group { padding: 1rem 0 0 0; }
+.login-wrapper .login .login-group .btn { margin-top: 0.5rem; }
