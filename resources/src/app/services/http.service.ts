@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ApiResponse} from '../models/apiresponse.model';
 import {ConfigService} from './config.service';
@@ -9,6 +9,8 @@ import {StorageService} from './storage.service';
 export class HttpService {
 
   base = null;
+
+  public unauthorizedEvent: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient, config: ConfigService, private alert: AlertService, private storage: StorageService) {
     this.base = config.baseURL;
@@ -23,6 +25,9 @@ export class HttpService {
   }
 
   private onError(e) {
+    if (e.status === 401) {
+      this.unauthorizedEvent.emit();
+    }
     this.alert.danger(e.message);
   }
 

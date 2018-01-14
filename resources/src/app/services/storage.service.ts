@@ -5,8 +5,7 @@ export class StorageService {
 
   get(key: string): Object {
     try {
-      let data = JSON.parse(localStorage.getItem(key));
-      return data;
+      return JSON.parse(localStorage.getItem(key));
     } catch (e) {
       console.log('unable to get item : ' + key);
       return null;

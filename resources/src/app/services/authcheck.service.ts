@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
-import {CanActivate, Router} from '@angular/router';
-import {StorageService} from './storage.service';
+import {CanActivate} from '@angular/router';
+import {AuthService} from './auth.service';
 
 @Injectable()
 export class AuthCheck implements CanActivate {
-  constructor(private storage: StorageService, private router: Router) {}
+  constructor(private auth: AuthService) {}
   canActivate(): boolean {
-    if (this.storage.get('token')) {
+    if (this.auth.user()) {
       return true;
     } else {
-      this.router.navigate(['/', 'login']);
+      this.auth.afterLogout();
       return false;
     }
   }

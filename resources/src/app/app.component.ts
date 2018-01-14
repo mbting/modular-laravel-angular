@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.auth.token()) { this.sidebar = true; }
+    if (this.auth.user()) { this.sidebar = true; }
   }
 
 }

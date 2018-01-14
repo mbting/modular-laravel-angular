@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.auth.token()) { this.user = this.auth.user(); }
+    if (this.auth.user()) { this.user = this.auth.user(); }
   }
 
   logout() {
