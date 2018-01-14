@@ -1,10 +1,12 @@
 <clr-main-container class="main-container">
 
-  <clr-alert [clrAlertType]="alert.level" [clrAlertAppLevel]="true" *ngIf="alert">
+  <clr-alert
+    [clrAlertType]="alert.level"
+    [clrAlertAppLevel]="true"
+    [(clrAlertClosed)]="alertClosed"
+    [clrAlertClosable]="true">
     <clr-alert-item>
-        <span class="alert-text">
-            {{ alert.text }}
-        </span>
+      <span class="alert-text">{{ alert.text }}</span>
     </clr-alert-item>
   </clr-alert>
 
@@ -15,4 +17,5 @@
     </div>
     <app-sidebar class="sidenav" [clr-nav-level]="1" *ngIf="sidebar"></app-sidebar>
   </div>
+
 </clr-main-container>
