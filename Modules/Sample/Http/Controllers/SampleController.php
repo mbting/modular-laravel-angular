@@ -10,4 +10,12 @@ class SampleController extends Controller {
   public function index() {
     return Response::success([1,2,3,4,5,6,7,8]);
   }
+
+  public function action() {
+    return Response::success("Action");
+  }
+
+  public function another() {
+    return Response::success("Another");
+  }
 }

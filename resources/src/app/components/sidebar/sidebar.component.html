@@ -1,5 +1,14 @@
 <section class="sidenav-content">
   <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="active">Home</a>
-  <a class="nav-link" [routerLink]="['/', 'sample']" routerLinkActive="active">Sample</a>
+  <section class="nav-group collapsible">
+    <input id="sample-tab" type="checkbox">
+    <label for="sample-tab">Sample</label>
+    <ul class="nav-list">
+      <li><a class="nav-link" [routerLink]="['/', 'sample']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sample</a></li>
+      <li><a class="nav-link" [routerLink]="['/', 'sample', 'action']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Action</a></li>
+      <li><a class="nav-link" [routerLink]="['/', 'sample', 'another']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Another</a></li>
+    </ul>
+
+  </section>
   <a class="nav-link" [routerLink]="['/', 'login']" routerLinkActive="active">Login</a>
 </section>

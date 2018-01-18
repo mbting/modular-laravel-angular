@@ -6,7 +6,17 @@ export class SampleDataService {
 
   constructor(private http: HttpService) {}
 
+  private base = 'sample';
+
   get() {
-    return this.http.get('sample');
+    return this.http.get(this.base);
+  }
+
+  action() {
+    return this.http.get(this.base + '/action');
+  }
+
+  another() {
+    return this.http.get(this.base + '/another');
   }
 }
