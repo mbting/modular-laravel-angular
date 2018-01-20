@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../services/auth.service';
+import {HttpService} from '../../services/http.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +9,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  nav = [];
+
+  constructor(private auth: AuthService, private http: HttpService) {}
 
   ngOnInit() {
+    if (this.auth.user()) {
+      this.http.get('sidebar').then( r => {
+        this.nav = r.payload;
+      });
+    }
   }
 
 }
