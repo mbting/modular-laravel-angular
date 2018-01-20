@@ -12,5 +12,10 @@
     "files": [
         "start.php"
     ],
-    "requires": []
+    "requires": [],
+    "action": [
+        { "name": "Sample", "link": ["/", "sample"] },
+        { "name": "Action", "link": ["/", "sample", "action"] },
+        { "name": "Another", "link": ["/", "sample", "another"] }
+    ]
 }
